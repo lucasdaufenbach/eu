@@ -80,7 +80,8 @@
     .seta { justify-self: center; color: var(--suave); font-size: 14px; }
     .camada.agente { background: rgba(31, 95, 115, 0.1); }
     .caso.pizza { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
-    .caso.pizza > img { display: block; width: 100%; border-radius: 12px; aspect-ratio: 16 / 10; object-fit: cover; }
+    .pizza-lado { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .pizza-lado img { display: block; width: 100%; border-radius: 12px; aspect-ratio: 16 / 10; object-fit: cover; }
     @media (max-width: 900px) { .caso.pizza { grid-template-columns: 1fr; } }
     .grafo { grid-column: 1 / -1; margin: 0; }
     .grafo img { display: block; width: 100%; border-radius: 12px; background: #1b1d20; }
@@ -201,15 +202,16 @@
       <p class="rotulo">Fora do código</p>
       <h2>Também sei fazer pizza</h2>
       <div class="caso pizza">
-        <img src="capas/pizza.jpg" alt="Tela inicial do cardápio digital da Noite da Pizza, com uma pizza margherita" loading="lazy" />
+        <div class="pizza-lado">
+          <img src="capas/pizza.jpg" alt="Tela inicial do cardápio digital da Noite da Pizza, com uma pizza margherita" loading="lazy" />
+          <a class="botao cheio" href="noite-da-pizza/" target="_blank" rel="noopener">Abrir a demonstração</a>
+        </div>
         <div>
           <span class="tag">Noite da Pizza</span>
           <h3>Da massa ao sistema de pedidos</h3>
           <p>Antes de entrar na faculdade, trabalhei em pizzarias: sei fazer a massa, montar e tocar o forno. Em novembro, no aniversário da minha namorada, fizemos uma noite de pizza no forno de casa para muitos convidados.</p>
           <p>Para dar conta, criei em um dia um cardápio digital. Cada pessoa lia o QR code da mesa e pedia pelo celular, o pedido entrava numa fila em tempo real que eu acompanhava no meu celular enquanto fazia as pizzas, e o estoque de cada sabor baixava sozinho. Na festa, o servidor rodou no meu próprio computador, aberto para a internet pelo Tailscale Funnel, sem servidor alugado. Virou parte da festa, e tem um easter egg: quem toca na pizza dá de cara com a aniversariante.</p>
-          <p class="nota">Como o servidor da festa era o meu PC, a demonstração abaixo roda inteira no seu navegador: dá para pedir uma pizza e abrir a cozinha em outra aba (PIN 0611) para ver o pedido chegar.</p>
-          <a class="botao cheio" href="noite-da-pizza/" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:4px">Abrir a demonstração</a>
-        </div>
+          <p class="nota">Como o servidor da festa era o meu PC, a demonstração roda inteira no seu navegador: dá para pedir uma pizza e abrir a cozinha em outra aba (PIN 0611) para ver o pedido chegar.</p>        </div>
       </div>
     </section>
 
