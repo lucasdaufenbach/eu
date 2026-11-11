@@ -79,6 +79,9 @@
     .camada span { color: var(--suave); }
     .seta { justify-self: center; color: var(--suave); font-size: 14px; }
     .camada.agente { background: rgba(31, 95, 115, 0.1); }
+    .grafo { grid-column: 1 / -1; margin: 0; }
+    .grafo img { display: block; width: 100%; border-radius: 12px; background: #1b1d20; }
+    .grafo figcaption { margin-top: 8px; font-size: 13px; color: var(--suave); }
     .nota { font-size: 13px; color: var(--suave); margin-top: 4px; }
 
     footer { padding: 36px 0 56px; border-top: 1px solid var(--linha); color: var(--suave); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
@@ -116,12 +119,16 @@
       <p class="rotulo">IA aplicada</p>
       <h2>Agente de IA para a BDGD da ANEEL</h2>
       <div class="caso">
+        <figure class="grafo">
+          <img src="capas/acervo-bdgd.jpg" alt="Grafo do acervo da BDGD: 458 nós e 918 ligações entre entidades da ANEEL, telas, rotinas Oracle, módulos C#, regras e mensagens de validação" loading="lazy" />
+          <figcaption>O acervo visto como grafo: 458 peças (entidades da ANEEL, telas, rotinas Oracle, módulos C#, regras e validações) e 918 ligações, todas extraídas do código, nenhuma desenhada à mão.</figcaption>
+        </figure>
         <div>
           <span class="tag">Setor elétrico · regulatório</span>
           <h3>Um acervo que liga a norma ao sistema, com um agente que responde em linguagem simples</h3>
           <p>Todo ano as distribuidoras entregam à ANEEL a BDGD, uma base regulatória complexa que muda com frequência. Por iniciativa própria, criei um acervo que conecta o documento da ANEEL às rotinas do banco, ao back-end e ao front-end, ligando cada um dos 1.383 campos à sua origem, e um agente de IA que responde as dúvidas em linguagem simples.</p>
           <p>O suporte já usa para atender mais rápido, e agora o agente está indo para dentro do sistema. Ele só lê e usa busca exata, sem banco vetorial: num contexto regulado, toda resposta precisa poder ser conferida.</p>
-          <p class="nota">Projeto interno da empresa: mostro a arquitetura e as decisões, sem o código e os dados.</p>
+          <p class="nota">Projeto interno da empresa: mostro a arquitetura, as decisões e esta imagem, sem o código e os dados.</p>
         </div>
         <div class="camadas" aria-label="Camadas que o acervo conecta">
           <div class="camada"><b>Norma</b><span>documento da ANEEL</span></div>
