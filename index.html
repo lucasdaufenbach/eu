@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lucas Daufenbach · Projetos</title>
+  <meta name="description" content="Engenheiro de software. IA aplicada a sistemas reais e produtos 3D que rodam no navegador." />
+  <meta name="theme-color" content="#f6f5f1" />
+  <meta property="og:title" content="Lucas Daufenbach · Projetos" />
+  <meta property="og:description" content="IA aplicada a sistemas reais e produtos 3D que rodam no navegador." />
+  <meta property="og:image" content="capas/riviera.jpg" />
+  <style>
+    :root {
+      --fundo: #f6f5f1;
+      --cartao: #ffffff;
+      --tinta: #16191d;
+      --suave: #5b636b;
+      --linha: rgba(22, 25, 29, 0.1);
+      --destaque: #1f5f73; /* azul-petróleo, a única cor da página */
+      --ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--tinta);
+      font: 16px/1.6 var(--ui);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .pagina { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- topo ---------- */
+    header.topo { padding: 72px 0 40px; display: grid; gap: 18px; }
+    .nome { margin: 0; font-size: clamp(34px, 6vw, 54px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; }
+    .cargo { margin: 0; font-size: clamp(17px, 2.4vw, 21px); color: var(--suave); max-width: 640px; }
+    .sobre { margin: 6px 0 0; max-width: 680px; color: #333a40; }
+    .contatos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .botao {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; border-radius: 999px; border: 1px solid var(--linha);
+      background: var(--cartao); text-decoration: none; font-size: 15px; font-weight: 500;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .botao:hover { border-color: var(--tinta); }
+    .botao.cheio { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+    .botao svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ---------- seções ---------- */
+    section { padding: 36px 0; border-top: 1px solid var(--linha); }
+    .rotulo { margin: 0 0 6px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--destaque); font-weight: 600; }
+    h2 { margin: 0 0 22px; font-size: clamp(24px, 3.4vw, 32px); letter-spacing: -0.01em; line-height: 1.15; }
+
+    /* ---------- cartões ---------- */
+    .grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .cartao {
+      display: flex; flex-direction: column; overflow: hidden;
+      background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px;
+      text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    a.cartao:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22, 25, 29, 0.1); }
+    .cartao img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #e9e7e1; }
+    .corpo { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 20px; flex: 1; }
+    .tag { align-self: flex-start; font-size: 12px; font-weight: 600; color: var(--destaque); background: rgba(31, 95, 115, 0.09); padding: 3px 9px; border-radius: 999px; }
+    .cartao h3 { margin: 2px 0 0; font-size: 19px; letter-spacing: -0.01em; }
+    .cartao p { margin: 0; color: var(--suave); font-size: 15px; }
+    .abrir { margin-top: auto; padding-top: 8px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+    .abrir svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    a.cartao:hover .abrir svg { transform: translateX(3px); }
+
+    /* projeto de IA: estudo de caso, sem link (é sistema interno da empresa) */
+    .caso { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; padding: 26px; background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px; }
+    .caso h3 { margin: 6px 0 10px; font-size: 22px; letter-spacing: -0.01em; }
+    .caso p { margin: 0 0 12px; color: #333a40; }
+    .camadas { display: grid; gap: 8px; align-content: start; }
+    .camada { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: var(--fundo); font-size: 14px; }
+    .camada b { min-width: 74px; font-weight: 600; }
+    .camada span { color: var(--suave); }
+    .seta { justify-self: center; color: var(--suave); font-size: 14px; }
+    .camada.agente { background: rgba(31, 95, 115, 0.1); }
+    .nota { font-size: 13px; color: var(--suave); margin-top: 4px; }
+
+    footer { padding: 36px 0 56px; border-top: 1px solid var(--linha); color: var(--suave); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    @media (max-width: 900px) {
+      .grade { grid-template-columns: 1fr 1fr; }
+      .caso { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .pagina { padding: 0 16px; }
+      header.topo { padding: 48px 0 28px; }
+      .grade { grid-template-columns: 1fr; }
+      .caso { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <header class="topo">
+      <h1 class="nome">Lucas Daufenbach</h1>
+      <p class="cargo">Engenheiro de software. Coloco IA dentro de sistemas reais e crio produtos 3D que rodam direto no navegador.</p>
+      <p class="sobre">Sou de Criciúma (SC), tenho 25 anos e sou formado em Engenharia de Software pela Unisatc. Trabalho há mais de dois anos na Useall Software, em sistemas do setor elétrico. Sou muito criativo e acompanho o que está surgindo para aprender e construir também. Aqui estão alguns dos produtos que já criei.</p>
+      <div class="contatos">
+        <a class="botao cheio" href="https://www.linkedin.com/in/lucas-daufenbach" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+          LinkedIn
+        </a>
+        <a class="botao" href="#ia">IA aplicada</a>
+        <a class="botao" href="#3d">Produtos 3D</a>
+        <a class="botao" href="#educacao">Educação</a>
+      </div>
+    </header>
+
+    <section id="ia">
+      <p class="rotulo">IA aplicada</p>
+      <h2>Agente de IA para a BDGD da ANEEL</h2>
+      <div class="caso">
+        <div>
+          <span class="tag">Setor elétrico · regulatório</span>
+          <h3>Um acervo que liga a norma ao sistema, com um agente que responde em linguagem simples</h3>
+          <p>Todo ano as distribuidoras entregam à ANEEL a BDGD, uma base regulatória complexa que muda com frequência. Por iniciativa própria, criei um acervo que conecta o documento da ANEEL às rotinas do banco, ao back-end e ao front-end, ligando cada um dos 1.383 campos à sua origem, e um agente de IA que responde as dúvidas em linguagem simples.</p>
+          <p>O suporte já usa para atender mais rápido, e agora o agente está indo para dentro do sistema. Ele só lê e usa busca exata, sem banco vetorial: num contexto regulado, toda resposta precisa poder ser conferida.</p>
+          <p class="nota">Projeto interno da empresa: mostro a arquitetura e as decisões, sem o código e os dados.</p>
+        </div>
+        <div class="camadas" aria-label="Camadas que o acervo conecta">
+          <div class="camada"><b>Norma</b><span>documento da ANEEL</span></div>
+          <div class="seta">↓</div>
+          <div class="camada"><b>Banco</b><span>rotinas no Oracle</span></div>
+          <div class="seta">↓</div>
+          <div class="camada"><b>Back-end</b><span>mapeamento das tabelas</span></div>
+          <div class="seta">↓</div>
+          <div class="camada"><b>Front-end</b><span>tela de cadastro</span></div>
+          <div class="seta">↓</div>
+          <div class="camada agente"><b>Agente</b><span>responde, só lê, auditável</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="3d">
+      <p class="rotulo">Produtos 3D no navegador</p>
+      <h2>Abre no celular ou no computador, sem instalar nada</h2>
+      <div class="grade">
+        <a class="cartao" href="https://lucasdaufenbach.github.io/riviera-maya/" target="_blank" rel="noopener">
+          <img src="capas/riviera.jpg" alt="Prédio Riviera Maya em 3D na orla de Balneário Rincão" loading="lazy" />
+          <div class="corpo">
+            <span class="tag">Imóveis</span>
+            <h3>Tour 3D de empreendimento</h3>
+            <p>Da foto aérea ao prédio em 3D: corta o andar, abre a planta e deixa entrar nos apartamentos antes de a obra ficar pronta.</p>
+            <span class="abrir">Abrir o tour <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+        <a class="cartao" href="https://lucasdaufenbach.github.io/moagem-escoria-3d/" target="_blank" rel="noopener">
+          <img src="capas/planta.jpg" alt="Planta industrial de secagem e moagem em 3D" loading="lazy" />
+          <div class="corpo">
+            <span class="tag">Indústria</span>
+            <h3>Plano de venda de uma planta industrial</h3>
+            <p>A linha de produção em 3D, etapa por etapa, com as fichas dos equipamentos e uma simulação de custos e retorno para o vendedor apresentar ao cliente.</p>
+            <span class="abrir">Abrir a planta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+        <a class="cartao" href="https://lucasdaufenbach.github.io/mockup3d/" target="_blank" rel="noopener">
+          <img src="capas/mockup3d.jpg" alt="Camiseta em 3D com painel de estampas" loading="lazy" />
+          <div class="corpo">
+            <span class="tag">Moda</span>
+            <h3>Mockup 3D de uniformes</h3>
+            <p>Nasceu dos uniformes da universidade: você posiciona a estampa e vê a camiseta ou o moletom em 3D na hora.</p>
+            <span class="abrir">Abrir o mockup <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="educacao">
+      <p class="rotulo">Educação</p>
+      <h2>Feito para quem não tem familiaridade com tecnologia</h2>
+      <div class="grade">
+        <a class="cartao" href="https://sala-da-prof.app-professora.workers.dev/" target="_blank" rel="noopener">
+          <img src="capas/sala-da-prof.jpg" alt="Página da Sala da Prof" loading="lazy" />
+          <div class="corpo">
+            <span class="tag">Escola</span>
+            <h3>Sala da Prof</h3>
+            <p>Um ambiente para professoras de educação infantil substituírem o Word e o Canva: documentos da escola, turma e fichas das crianças, automatizando o que é repetitivo.</p>
+            <span class="abrir">Ver e baixar (Windows) <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Lucas Daufenbach · Criciúma, SC</span>
+      <a href="https://www.linkedin.com/in/lucas-daufenbach" target="_blank" rel="noopener">linkedin.com/in/lucas-daufenbach</a>
+    </footer>
+  </div>
+</body>
+</html>
