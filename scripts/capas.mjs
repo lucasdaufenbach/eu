@@ -38,6 +38,12 @@ const PROJETOS = [
     passos: [[9000, `'ok'`]],
   },
   {
+    // roda só no PC (npm run festa em Desktop/pizza-duda): use `node scripts/capas.mjs pizza`
+    nome: 'pizza',
+    url: 'http://localhost:3000/',
+    passos: [[5000, `'ok'`]],
+  },
+  {
     nome: 'sala-da-prof',
     url: 'https://sala-da-prof.app-professora.workers.dev/',
     passos: [[2500, `'ok'`]],

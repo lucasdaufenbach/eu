@@ -79,6 +79,9 @@
     .camada span { color: var(--suave); }
     .seta { justify-self: center; color: var(--suave); font-size: 14px; }
     .camada.agente { background: rgba(31, 95, 115, 0.1); }
+    .caso.pizza { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+    .caso.pizza > img { display: block; width: 100%; border-radius: 12px; aspect-ratio: 16 / 10; object-fit: cover; }
+    @media (max-width: 900px) { .caso.pizza { grid-template-columns: 1fr; } }
     .grafo { grid-column: 1 / -1; margin: 0; }
     .grafo img { display: block; width: 100%; border-radius: 12px; background: #1b1d20; }
     .grafo figcaption { margin-top: 8px; font-size: 13px; color: var(--suave); }
@@ -191,6 +194,21 @@
             <span class="abrir">Ver e baixar (Windows) <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
+      </div>
+    </section>
+
+    <section id="pizza">
+      <p class="rotulo">Fora do código</p>
+      <h2>Também sei fazer a pizza</h2>
+      <div class="caso pizza">
+        <img src="capas/pizza.jpg" alt="Tela inicial do cardápio digital da Noite da Pizza, com uma pizza margherita" loading="lazy" />
+        <div>
+          <span class="tag">Noite da Pizza</span>
+          <h3>Da massa ao sistema de pedidos</h3>
+          <p>Antes de entrar na faculdade, trabalhei em pizzarias: sei fazer a massa, montar e tocar o forno. Em novembro, no aniversário da minha namorada, fizemos uma noite de pizza no forno de casa para muitos convidados.</p>
+          <p>Para dar conta, criei em um dia um cardápio digital. Cada pessoa lia o QR code da mesa e pedia pelo celular, o pedido entrava numa fila em tempo real que eu acompanhava no meu celular enquanto fazia as pizzas, e o estoque de cada sabor baixava sozinho. O sistema rodou no meu próprio computador, aberto para a internet pelo Tailscale Funnel, sem servidor alugado. Virou parte da festa, e tem um easter egg: quem toca na pizza dá de cara com a aniversariante.</p>
+          <p class="nota">Rodou só durante a festa, por isso não tem link.</p>
+        </div>
       </div>
     </section>
 
